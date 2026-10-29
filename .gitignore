@@ -1,0 +1,11 @@
+.venv*/
+.cache/
+__pycache__/
+*.egg-info/
+build/
+dist/
+outputs/
+*.tar.gz
+*.zip
+*.pt
+*.onnx

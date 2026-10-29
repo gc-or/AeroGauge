@@ -1,0 +1,297 @@
+{
+  "task_id": "Aerial-WRJ-TruthLanding-Coordination-v5",
+  "revision": "v5-progress-coordination-warm-start-ab",
+  "approval": "User requested an isolated two-group fine-tuning comparison; no formal training launched by the assistant.",
+  "hypothesis": "Adding only the soft XY/descent progress cost reduces pre-contact extra climb and completion time without degrading strict landing success, centering or contact loads.",
+  "physics_dt_s": 0.002,
+  "decimation": 25,
+  "episode_length_s": 20.0,
+  "goal_local_m": [
+    0,
+    0,
+    1.05
+  ],
+  "action": {
+    "dimension": 4,
+    "order": [
+      "v_forward_m_s",
+      "v_left_m_s",
+      "v_up_m_s",
+      "world_yaw_rate_rad_s"
+    ],
+    "scale": [
+      2.0,
+      2.0,
+      0.8,
+      1.5
+    ],
+    "clip": 1.0,
+    "horizontal_norm_limit": 1.0,
+    "frame": "Heading FLU; absolute ground velocity, NOT relative-to-platform, NOT residual. No platform feed-forward or yaw P added.",
+    "role": "absolute_world_velocity_expressed_in_heading_frame"
+  },
+  "observation": {
+    "dimension": 44,
+    "position_scale_m": 4.0,
+    "velocity_scale_m_s": 2.0,
+    "angular_scale_rad_s": 3.0,
+    "source": "simulation truth, no image/tag detection",
+    "order": [
+      "relative_landing_point_heading:3",
+      "relative_velocity_heading:3",
+      "platform_velocity_heading:3",
+      "projected_gravity_B:3",
+      "angular_velocity_B:3",
+      "sin_yaw_error:1",
+      "cos_yaw_error:1",
+      "previous_absolute_action:4",
+      "platform_contact:1",
+      "motor_fraction:1",
+      "elapsed_fraction:1",
+      "touch_confirm_fraction:1",
+      "motor_ramp_fraction:1",
+      "mean_normal_force_weight_ratio:1",
+      "peak_normal_force_weight_ratio:1",
+      "shear_force_weight_ratio:1",
+      "skid_edge_clearance_xy_over_half_deck:2",
+      "settled_fraction:1",
+      "controller_slewed_command_heading_scaled:4",
+      "velocity_integral_heading_scaled:3",
+      "rate_integral_body_scaled:3",
+      "controller_yaw_reference_error_sin_cos:2"
+    ]
+  },
+  "reset": {
+    "position_half_range_m": [
+      0,
+      0,
+      0
+    ],
+    "roll_pitch_half_range_deg": 3.0,
+    "yaw_half_range_deg": 90.0,
+    "velocity_half_range_m_s": 0.03,
+    "angular_velocity_half_range_rad_s": 0.03,
+    "horizontal_radius_range_m": [
+      2.0,
+      4.0
+    ],
+    "horizontal_angle_range_deg": [
+      -180.0,
+      180.0
+    ],
+    "height_above_landing_com_range_m": [
+      0.9,
+      1.2
+    ],
+    "position_rule": "Static mixture at every reset, uniform area in each XY annulus; no curriculum advancement, no teacher trajectories, all levels from update 1. Evaluation uses fixed cases, not this mixture.",
+    "mixture": [
+      {
+        "name": "near",
+        "probability": 0.4,
+        "radius_m": [
+          0.0,
+          0.1
+        ],
+        "height_m": [
+          0.12,
+          0.35
+        ],
+        "yaw_half_range_deg": 20.0
+      },
+      {
+        "name": "middle",
+        "probability": 0.3,
+        "radius_m": [
+          0.3,
+          1.5
+        ],
+        "height_m": [
+          0.4,
+          1.0
+        ],
+        "yaw_half_range_deg": 60.0
+      },
+      {
+        "name": "far",
+        "probability": 0.3,
+        "radius_m": [
+          2.0,
+          4.0
+        ],
+        "height_m": [
+          0.9,
+          1.2
+        ],
+        "yaw_half_range_deg": 90.0
+      }
+    ]
+  },
+  "reward": {
+    "distance_xy_per_m_s": -1.0,
+    "height_per_m_s": -0.75,
+    "near_xy_speed_sq": -2.0,
+    "near_xy_sigma_m": 0.35,
+    "near_z_speed_sq": -2.0,
+    "near_z_sigma_m": 0.25,
+    "tangential_speed_sq": -0.2,
+    "heading_per_s": -1.0,
+    "angular_sq": -0.02,
+    "tilt": -0.05,
+    "smoothness": -0.05,
+    "impact_excess_sq": -2.0,
+    "impact_free_load_weights": 1.5,
+    "impact_normalization_weights": 4.0,
+    "time_base_per_s": 0.2,
+    "time_tau_s": 6.0,
+    "touch_once": 10.0,
+    "success": 150.0,
+    "failure": -100.0,
+    "timeout": -100.0,
+    "charge_remaining_time_on_failure": true,
+    "potential_xy_per_m": 5.0,
+    "potential_height_per_m": 3.0,
+    "potential_heading": 0.5,
+    "edge_risk_per_s": -2.0,
+    "edge_height_sigma_m": 0.2,
+    "edge_clearance_scale_m": 0.05,
+    "edge_normalized_cap": 2.0
+  },
+  "success": {
+    "definition": "All skids within deck; heading aligned to actual horizontal platform motion (stationary: deck heading); physical support with motors off for 1 s. Finite 20 s deadline, no timeout bootstrap.",
+    "time_limit_s": 20.0
+  },
+  "termination": {
+    "min_height_m": 0.15,
+    "max_height_m": 2.5,
+    "max_relative_radius_m": 6.0,
+    "max_tilt_deg": 60.0,
+    "max_speed_m_s": 6.0,
+    "ground_contact_N": 0.5,
+    "bad_touch_speed_m_s": 0.45,
+    "bad_touch_tilt_deg": 20.0,
+    "contact_force_limit_N": 120.0
+  },
+  "train": {
+    "num_envs": 2048,
+    "iterations": 200,
+    "seed": 0
+  },
+  "ppo": {
+    "num_steps_per_env": 24,
+    "init_noise_std": 0.35,
+    "actor_hidden_dims": [
+      128,
+      128
+    ],
+    "critic_hidden_dims": [
+      128,
+      128
+    ],
+    "learning_rate": 0.0005,
+    "num_learning_epochs": 5,
+    "num_mini_batches": 4,
+    "entropy_coef": 0.0,
+    "gamma": 0.997,
+    "lam": 0.95,
+    "clip_param": 0.2,
+    "desired_kl": 0.01,
+    "max_grad_norm": 1.0,
+    "schedule": "adaptive",
+    "save_interval": 10
+  },
+  "checkpointing": {
+    "dense_windows": []
+  },
+  "ground_usd_path": "assets/vendor/isaac_5.1_grid/default_environment.usd",
+  "platform": {
+    "asset": "assets/generated/wrj_cart_platform60_v1/cart.usda",
+    "deck_size_m": [
+      0.6,
+      0.6
+    ],
+    "top_z_m": 0.4,
+    "tag_family": "tag36h11",
+    "tag_id": 0,
+    "tag_black_border_size_m": 0.1,
+    "tag_with_quiet_zone_m": 0.125,
+    "motion": "GPU-compatible dynamic carrier with prescribed velocity every physics step; no in-flight pose teleport",
+    "speed_range_m_s": [
+      0,
+      0.2
+    ],
+    "direction_range_deg": [
+      -20,
+      20
+    ],
+    "yaw_rad": 0.0,
+    "friction": 0.6,
+    "restitution": 0.0,
+    "carrier_mass_kg": 100.0,
+    "carrier_note": "Ideal prescribed-motion fixture, not a measured wheel/Go2 dynamics model; gravity disabled, reaction motion checked.",
+    "heading_definition": "atan2(actual vy, actual vx) for speed > 0.02 m/s; otherwise deck yaw",
+    "stationary_heading_speed_m_s": 0.02,
+    "yaw_alignment": "Deck yaw aligned with prescribed straight-motion heading at reset; no in-flight pose teleport"
+  },
+  "landing": {
+    "com_height_above_deck_m": 0.1275,
+    "skid_bounds_S_m": [
+      [
+        -0.074031,
+        -0.071122,
+        -0.126438
+      ],
+      [
+        0.076084,
+        0.072825,
+        -0.116452
+      ]
+    ],
+    "edge_margin_m": 0.002,
+    "touch_contact_N": 0.2,
+    "touch_height_tolerance_m": 0.018,
+    "touch_speed_m_s": 0.15,
+    "touch_tilt_deg": 10.0,
+    "touch_yaw_deg": 10.0,
+    "contact_confirm_s": 0.15,
+    "motor_ramp_down_s": 0.5,
+    "supported_force_N": 3.0,
+    "settle_s": 1.0,
+    "success_speed_m_s": 0.06,
+    "success_tilt_deg": 8.0,
+    "success_yaw_deg": 10.0
+  },
+  "tactile": {
+    "sensor": "Cart-mounted PhysX ContactSensor filtered to Drone; ideal aggregate, not real pressure array",
+    "force_observation_clip_weights": 20.0,
+    "sampling_hz": 500.0,
+    "policy_aggregation_s": 0.05,
+    "normal_direction": "Positive compressive force on cart, minus force dot deck up",
+    "impact_metric": "Peak normal N and time integral max(normal - drone weight, 0) N s; stable support is not impact",
+    "shutdown_contact_loss_grace_s": 0.1,
+    "contact_decision": "Mean normal load over last 25 physics steps (50 ms); peaks retained separately for safety and metrics."
+  },
+  "logging": {
+    "action_columns": "normalized absolute command after clipping and XY disk projection",
+    "command_columns": "physical target velocity/yaw rate followed by controller slewed command",
+    "episode_condition_counts": "per-field valid counts logged for touch-conditioned aggregates"
+  },
+  "baseline_comparison": {
+    "implementation": "separate baseline.py, imported only for explicit --scripted eval/replay",
+    "guidance_config": "configs/wrj_landing_rl_v4/baseline_guidance.json",
+    "training_access": false
+  },
+  "coordination": {
+    "weight_per_s": 2.0,
+    "direction_epsilon_m": 1e-06,
+    "distance_epsilon_m": 0.05,
+    "speed_scale_m_s": 1.0,
+    "fade_height_low_m": 0.05,
+    "fade_height_high_m": 0.15
+  },
+  "warm_start": {
+    "protocol": "actor_and_std_transfer_fresh_critic_fresh_optimizer",
+    "restore_environment_rng": false,
+    "exploration": "inherit source per-action std exactly; no reset to 0.35",
+    "added_update_count_starts_at": 0
+  }
+}

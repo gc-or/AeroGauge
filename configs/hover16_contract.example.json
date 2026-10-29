@@ -1,0 +1,10 @@
+{
+  "interface": "wrj_hover16_trim_v1",
+  "control_dt_s": 0.02,
+  "position_scale_m": 0.5,
+  "velocity_scale_m_s": 1.0,
+  "angular_velocity_scale_rad_s": 5.0,
+  "trim_fraction_scale": 0.5,
+  "external_normalization": false,
+  "recurrent": false
+}

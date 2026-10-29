@@ -1,0 +1,244 @@
+{
+  "date": "2026-10-29",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.15",
+  "packages": {
+    "mujoco": "3.15.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "aerogauge": "0.1.0"
+  },
+  "tests": {
+    "core_passed": 12,
+    "torch_optional_skipped_in_mujoco_env": 2,
+    "synthetic_torchscript_tests_passed_in_separate_python313_torch260cpu": 2
+  },
+  "editable_install_verified": true,
+  "pip_check_passed": true,
+  "offscreen_render_verified": true,
+  "source_assets_unchanged": true,
+  "copied_source_files_verified": 67,
+  "runs": {
+    "hover_first": {
+      "requested_episodes": 3,
+      "evaluated_episodes": 3,
+      "successful_episodes": 3,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.03196537041979546,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.03398304831663765,
+          "position_max_error_m": 0.12300012850435335,
+          "velocity_rmse_m_s": 0.05037217145774655,
+          "motor_limit_fraction": 0.0
+        },
+        {
+          "seed": 1,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.03424270643391537,
+          "position_max_error_m": 0.11728831658182971,
+          "velocity_rmse_m_s": 0.05227276205191548,
+          "motor_limit_fraction": 0.0
+        },
+        {
+          "seed": 2,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.02767035650883339,
+          "position_max_error_m": 0.0950933975975281,
+          "velocity_rmse_m_s": 0.04155383159700467,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "step_first": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 1,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.13734682204747434,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.13734682204747434,
+          "position_max_error_m": 0.4960814328805267,
+          "velocity_rmse_m_s": 0.20095689041929518,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "circle_first": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 1,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.039593779144708144,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.039593779144708144,
+          "position_max_error_m": 0.12038591880879136,
+          "velocity_rmse_m_s": 0.0739042574725638,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "mass110": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 0,
+      "success_rate": 0.0,
+      "position_rmse_mean_m": 0.23556397946015392,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": false,
+          "completed": true,
+          "termination": "tracking_threshold",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.23556397946015392,
+          "position_max_error_m": 0.25744674529384004,
+          "velocity_rmse_m_s": 0.08903093433502769,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "lag": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 1,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.03392164559346362,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.03392164559346362,
+          "position_max_error_m": 0.12341344434771549,
+          "velocity_rmse_m_s": 0.05027357382982155,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "pulse": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 1,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.03702161918776175,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.03702161918776175,
+          "position_max_error_m": 0.12300012850435335,
+          "velocity_rmse_m_s": 0.0641517537910708,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "wind": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 1,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.03541800512643748,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.03541800512643748,
+          "position_max_error_m": 0.12241582495222095,
+          "velocity_rmse_m_s": 0.05232181625071066,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "installed_smoke": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 1,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.03398304831663765,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.03398304831663765,
+          "position_max_error_m": 0.12300012850435335,
+          "velocity_rmse_m_s": 0.05037217145774655,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    },
+    "final_smoke": {
+      "requested_episodes": 1,
+      "evaluated_episodes": 1,
+      "successful_episodes": 1,
+      "success_rate": 1.0,
+      "position_rmse_mean_m": 0.03398304831663765,
+      "episodes": [
+        {
+          "seed": 0,
+          "success": true,
+          "completed": true,
+          "termination": "completed",
+          "elapsed_s": 10.000000000000009,
+          "samples": 500,
+          "position_rmse_m": 0.03398304831663765,
+          "position_max_error_m": 0.12300012850435335,
+          "velocity_rmse_m_s": 0.05037217145774655,
+          "motor_limit_fraction": 0.0
+        }
+      ]
+    }
+  },
+  "not_verified": [
+    "Ubuntu Python 3.11",
+    "PyTorch 2.7.0/cu128 real actor",
+    "MuJoCo 3.16/3.17",
+    "Takeoff/landing",
+    "Moving platform",
+    "Real-world hardware"
+  ]
+}

@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="wrj_drone">
+  <compiler angle="radian" inertiafromgeom="false" />
+  <option timestep="0.002" gravity="0 0 -9.81" />
+  <asset>
+    <mesh name="visual_arm_left_lower" file="../meshes/visual/arm_left_lower.obj" />
+    <mesh name="collision_arm_left_lower" file="../meshes/collision/arm_left_lower.obj" />
+    <mesh name="visual_arm_left_upper" file="../meshes/visual/arm_left_upper.obj" />
+    <mesh name="collision_arm_left_upper" file="../meshes/collision/arm_left_upper.obj" />
+    <mesh name="visual_arm_pad_lower" file="../meshes/visual/arm_pad_lower.obj" />
+    <mesh name="visual_arm_pad_upper" file="../meshes/visual/arm_pad_upper.obj" />
+    <mesh name="visual_arm_right_lower" file="../meshes/visual/arm_right_lower.obj" />
+    <mesh name="collision_arm_right_lower" file="../meshes/collision/arm_right_lower.obj" />
+    <mesh name="visual_arm_right_upper" file="../meshes/visual/arm_right_upper.obj" />
+    <mesh name="collision_arm_right_upper" file="../meshes/collision/arm_right_upper.obj" />
+    <mesh name="visual_audio_connector" file="../meshes/visual/audio_connector.obj" />
+    <mesh name="collision_audio_connector" file="../meshes/collision/audio_connector.obj" />
+    <mesh name="visual_battery" file="../meshes/visual/battery.obj" />
+    <mesh name="collision_battery" file="../meshes/collision/battery.obj" />
+    <mesh name="visual_depth_camera_backplate" file="../meshes/visual/depth_camera_backplate.obj" />
+    <mesh name="collision_depth_camera_backplate" file="../meshes/collision/depth_camera_backplate.obj" />
+    <mesh name="visual_depth_camera_d435i" file="../meshes/visual/depth_camera_d435i.obj" />
+    <mesh name="collision_depth_camera_d435i" file="../meshes/collision/depth_camera_d435i.obj" />
+    <mesh name="visual_down_camera" file="../meshes/visual/down_camera.obj" />
+    <mesh name="collision_down_camera" file="../meshes/collision/down_camera.obj" />
+    <mesh name="visual_esc" file="../meshes/visual/esc.obj" />
+    <mesh name="collision_esc" file="../meshes/collision/esc.obj" />
+    <mesh name="visual_flight_controller" file="../meshes/visual/flight_controller.obj" />
+    <mesh name="collision_flight_controller" file="../meshes/collision/flight_controller.obj" />
+    <mesh name="visual_hdmi_connector" file="../meshes/visual/hdmi_connector.obj" />
+    <mesh name="collision_hdmi_connector" file="../meshes/collision/hdmi_connector.obj" />
+    <mesh name="visual_landing_damper" file="../meshes/visual/landing_damper.obj" />
+    <mesh name="collision_landing_damper" file="../meshes/collision/landing_damper.obj" />
+    <mesh name="visual_landing_pivot" file="../meshes/visual/landing_pivot.obj" />
+    <mesh name="collision_landing_pivot" file="../meshes/collision/landing_pivot.obj" />
+    <mesh name="visual_landing_skid_150mm" file="../meshes/visual/landing_skid_150mm.obj" />
+    <mesh name="collision_landing_skid_150mm" file="../meshes/collision/landing_skid_150mm.obj" />
+    <mesh name="visual_landing_strut_70mm" file="../meshes/visual/landing_strut_70mm.obj" />
+    <mesh name="collision_landing_strut_70mm" file="../meshes/collision/landing_strut_70mm.obj" />
+    <mesh name="visual_landing_tee_60deg" file="../meshes/visual/landing_tee_60deg.obj" />
+    <mesh name="collision_landing_tee_60deg" file="../meshes/collision/landing_tee_60deg.obj" />
+    <mesh name="visual_motor_v2306_v3" file="../meshes/visual/motor_v2306_v3.obj" />
+    <mesh name="collision_motor_v2306_v3" file="../meshes/collision/motor_v2306_v3.obj" />
+    <mesh name="visual_plate_bottom" file="../meshes/visual/plate_bottom.obj" />
+    <mesh name="collision_plate_bottom" file="../meshes/collision/plate_bottom.obj" />
+    <mesh name="visual_plate_middle" file="../meshes/visual/plate_middle.obj" />
+    <mesh name="collision_plate_middle" file="../meshes/collision/plate_middle.obj" />
+    <mesh name="visual_plate_top" file="../meshes/visual/plate_top.obj" />
+    <mesh name="collision_plate_top" file="../meshes/collision/plate_top.obj" />
+    <mesh name="visual_propeller_t5146" file="../meshes/visual/propeller_t5146.obj" />
+    <mesh name="visual_rk3588_heatsink" file="../meshes/visual/rk3588_heatsink.obj" />
+    <mesh name="collision_rk3588_heatsink" file="../meshes/collision/rk3588_heatsink.obj" />
+    <mesh name="visual_rk3588_pcb" file="../meshes/visual/rk3588_pcb.obj" />
+    <mesh name="collision_rk3588_pcb" file="../meshes/collision/rk3588_pcb.obj" />
+    <mesh name="visual_standoff_m2_30" file="../meshes/visual/standoff_m2_30.obj" />
+    <mesh name="visual_standoff_m2p5_14" file="../meshes/visual/standoff_m2p5_14.obj" />
+    <mesh name="visual_standoff_m3_10" file="../meshes/visual/standoff_m3_10.obj" />
+    <mesh name="visual_usb3_insert" file="../meshes/visual/usb3_insert.obj" />
+    <mesh name="visual_usb3_lower_pins" file="../meshes/visual/usb3_lower_pins.obj" />
+    <mesh name="visual_usb3_rear_insert" file="../meshes/visual/usb3_rear_insert.obj" />
+    <mesh name="visual_usb3_shell" file="../meshes/visual/usb3_shell.obj" />
+    <mesh name="visual_usb3_upper_pins" file="../meshes/visual/usb3_upper_pins.obj" />
+    <mesh name="visual_usb_a_connector" file="../meshes/visual/usb_a_connector.obj" />
+    <mesh name="collision_usb_a_connector" file="../meshes/collision/usb_a_connector.obj" />
+    <mesh name="visual_usb_c_connector" file="../meshes/visual/usb_c_connector.obj" />
+    <mesh name="collision_usb_c_connector" file="../meshes/collision/usb_c_connector.obj" />
+    <mesh name="visual_usb_hub" file="../meshes/visual/usb_hub.obj" />
+    <mesh name="collision_usb_hub" file="../meshes/collision/usb_hub.obj" />
+  </asset>
+  <worldbody>
+    <body name="drone" pos="0 0 0.5">
+      <freejoint name="root" />
+      <inertial pos="0 0 0" mass="0.7970487081232971" fullinertia="0.00313801926016 0.00317472273773 0.00398405253679 -2.40264707678e-07 5.98808357884e-05 2.22676606206e-05" />
+      <geom name="visual_depth_camera_d435i_01" type="mesh" mesh="visual_depth_camera_d435i" contype="0" conaffinity="0" group="2" mass="0" rgba="0.16 0.18 0.22 1" pos="-0.0507521523162 0.00050809594255 0.0513668639613" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="collision_depth_camera_d435i_01" type="mesh" mesh="collision_depth_camera_d435i" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0507521523162 0.00050809594255 0.0513668639613" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="visual_standoff_m2p5_14_01" type="mesh" mesh="visual_standoff_m2p5_14" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="0.0148418302425 0.0145539004608 -0.0561534324214" quat="1 0 0 0" />
+      <geom name="visual_standoff_m2p5_14_02" type="mesh" mesh="visual_standoff_m2p5_14" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="0.0148418302425 -0.0134460995392 -0.0561534324214" quat="1 0 0 0" />
+      <geom name="visual_standoff_m2p5_14_03" type="mesh" mesh="visual_standoff_m2p5_14" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="-0.0131581697575 -0.0134460995392 -0.0561534324214" quat="1 0 0 0" />
+      <geom name="visual_standoff_m2p5_14_04" type="mesh" mesh="visual_standoff_m2p5_14" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="-0.0131581697575 0.0145539004608 -0.0561534324214" quat="1 0 0 0" />
+      <geom name="visual_standoff_m2_30_01" type="mesh" mesh="visual_standoff_m2_30" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="0.0353878476838 0.0315080959426 0.00486686396134" quat="1 0 0 0" />
+      <geom name="visual_standoff_m2_30_02" type="mesh" mesh="visual_standoff_m2_30" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="-0.0336121523162 -0.0304919040574 0.00486686396199" quat="1 0 0 0" />
+      <geom name="visual_standoff_m2_30_03" type="mesh" mesh="visual_standoff_m2_30" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="0.0353878476838 -0.0304919040574 0.00486686396134" quat="1 0 0 0" />
+      <geom name="visual_standoff_m2_30_04" type="mesh" mesh="visual_standoff_m2_30" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="-0.0336121523162 0.0315080959426 0.00486686396134" quat="1 0 0 0" />
+      <geom name="visual_standoff_m3_10_01" type="mesh" mesh="visual_standoff_m3_10" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="-0.0138521523162 -0.0240319040574 0.0388668639613" quat="1 0 0 0" />
+      <geom name="visual_standoff_m3_10_02" type="mesh" mesh="visual_standoff_m3_10" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="-0.0138521523162 0.0250480959426 0.0388668639613" quat="1 0 0 0" />
+      <geom name="visual_standoff_m3_10_03" type="mesh" mesh="visual_standoff_m3_10" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="0.0393878476838 0.0250480959426 0.0388668639613" quat="1 0 0 0" />
+      <geom name="visual_standoff_m3_10_04" type="mesh" mesh="visual_standoff_m3_10" contype="0" conaffinity="0" group="2" mass="0" rgba="0.73 0.55 0.22 1" pos="0.0393878476838 -0.0240319040574 0.0388668639613" quat="1 0 0 0" />
+      <geom name="visual_hdmi_connector_01" type="mesh" mesh="visual_hdmi_connector" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0193478476838 -0.0477819040574 0.0495418639613" quat="0 2.46885013108e-15 -0.707106781187 0.707106781187" />
+      <geom name="collision_hdmi_connector_01" type="mesh" mesh="collision_hdmi_connector" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0193478476838 -0.0477819040574 0.0495418639613" quat="0 2.46885013108e-15 -0.707106781187 0.707106781187" />
+      <geom name="visual_audio_connector_01" type="mesh" mesh="visual_audio_connector" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.0124021523162 -0.0387519040574 0.0489168639613" quat="0 2.46885013108e-15 -0.707106781187 0.707106781187" />
+      <geom name="collision_audio_connector_01" type="mesh" mesh="collision_audio_connector" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0124021523162 -0.0387519040574 0.0489168639613" quat="0 2.46885013108e-15 -0.707106781187 0.707106781187" />
+      <geom name="visual_rk3588_pcb_01" type="mesh" mesh="visual_rk3588_pcb" contype="0" conaffinity="0" group="2" mass="0" rgba="0.1 0.32 0.2 1" pos="0.0179978476838 0.0101480959426 0.0489168639613" quat="0.5 0.5 0.5 0.5" />
+      <geom name="collision_rk3588_pcb_01" type="mesh" mesh="collision_rk3588_pcb" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0179978476838 0.0101480959426 0.0489168639613" quat="0.5 0.5 0.5 0.5" />
+      <geom name="visual_usb3_insert_01" type="mesh" mesh="visual_usb3_insert" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0222028476838 0.0356930959426 0.0460568639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_lower_pins_01" type="mesh" mesh="visual_usb3_lower_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0178528476838 0.0351730959426 0.0469368639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_lower_pins_02" type="mesh" mesh="visual_usb3_lower_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0203528476838 0.0351730959426 0.0469368639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_lower_pins_03" type="mesh" mesh="visual_usb3_lower_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0223528476838 0.0351730959426 0.0469368639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_lower_pins_04" type="mesh" mesh="visual_usb3_lower_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0248528476838 0.0351730959426 0.0469368639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_rear_insert_01" type="mesh" mesh="visual_usb3_rear_insert" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0222028476838 0.0313730959426 0.0492368639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_shell_01" type="mesh" mesh="visual_usb3_shell" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0222028476838 0.0378130959426 0.0434968639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_upper_pins_01" type="mesh" mesh="visual_usb3_upper_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0182028476838 0.0310730959426 0.0445768639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_upper_pins_02" type="mesh" mesh="visual_usb3_upper_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0202028476838 0.0310730959426 0.0445768639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_upper_pins_03" type="mesh" mesh="visual_usb3_upper_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0222028476838 0.0310730959426 0.0445768639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_upper_pins_04" type="mesh" mesh="visual_usb3_upper_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0242028476838 0.0310730959426 0.0445768639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb3_upper_pins_05" type="mesh" mesh="visual_usb3_upper_pins" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0262028476838 0.0310730959426 0.0445768639613" quat="-0.707106781187 0.707106781187 0 -2.46885013108e-15" />
+      <geom name="visual_usb_a_connector_01" type="mesh" mesh="visual_usb_a_connector" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0078180411838 0.0329263121711 0.0501468639613" quat="1.23442506554e-15 0.707106781187 -0.707106781187 -1.23442506554e-15" />
+      <geom name="collision_usb_a_connector_01" type="mesh" mesh="collision_usb_a_connector" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0078180411838 0.0329263121711 0.0501468639613" quat="1.23442506554e-15 0.707106781187 -0.707106781187 -1.23442506554e-15" />
+      <geom name="visual_usb_c_connector_01" type="mesh" mesh="visual_usb_c_connector" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0376978476838 0.0384430959426 0.0473118639613" quat="1 0 0 0" />
+      <geom name="collision_usb_c_connector_01" type="mesh" mesh="collision_usb_c_connector" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0376978476838 0.0384430959426 0.0473118639613" quat="1 0 0 0" />
+      <geom name="visual_propeller_t5146_01" type="mesh" mesh="visual_propeller_t5146" contype="0" conaffinity="0" group="2" mass="0" rgba="0.02 0.65 0.7 1" pos="-0.0914588694047 0.0928548130301 -0.00536135777412" quat="1 0 0 0" />
+      <geom name="visual_propeller_t5146_02" type="mesh" mesh="visual_propeller_t5146" contype="0" conaffinity="0" group="2" mass="0" rgba="0.02 0.65 0.7 1" pos="-0.0915048868455 -0.0917928166271 -0.00538165415548" quat="1 0 0 0" />
+      <geom name="visual_propeller_t5146_03" type="mesh" mesh="visual_propeller_t5146" contype="0" conaffinity="0" group="2" mass="0" rgba="0.02 0.65 0.7 1" pos="0.0931885473305 -0.0917928166271 -0.00538165415645" quat="1 0 0 0" />
+      <geom name="visual_propeller_t5146_04" type="mesh" mesh="visual_propeller_t5146" contype="0" conaffinity="0" group="2" mass="0" rgba="0.02 0.65 0.7 1" pos="0.0931885473305 0.0929006175488 -0.00538165415695" quat="1 0 0 0" />
+      <geom name="visual_motor_v2306_v3_01" type="mesh" mesh="visual_motor_v2306_v3" contype="0" conaffinity="0" group="2" mass="0" rgba="0.49 0.32 0.65 1" pos="-0.0915048868455 -0.0917928166271 -0.0240316541555" quat="0.923879532511 0 0 -0.382683432365" />
+      <geom name="collision_motor_v2306_v3_01" type="mesh" mesh="collision_motor_v2306_v3" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0915048868455 -0.0917928166271 -0.0240316541555" quat="0.923879532511 0 0 -0.382683432365" />
+      <geom name="visual_motor_v2306_v3_02" type="mesh" mesh="visual_motor_v2306_v3" contype="0" conaffinity="0" group="2" mass="0" rgba="0.49 0.32 0.65 1" pos="-0.0914588694047 0.0928548130301 -0.0240113577741" quat="0.923879532511 0 0 -0.382683432365" />
+      <geom name="collision_motor_v2306_v3_02" type="mesh" mesh="collision_motor_v2306_v3" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0914588694047 0.0928548130301 -0.0240113577741" quat="0.923879532511 0 0 -0.382683432365" />
+      <geom name="visual_motor_v2306_v3_03" type="mesh" mesh="visual_motor_v2306_v3" contype="0" conaffinity="0" group="2" mass="0" rgba="0.49 0.32 0.65 1" pos="0.0931885473305 0.0929006175488 -0.024031654157" quat="0.923879532511 0 0 0.382683432365" />
+      <geom name="collision_motor_v2306_v3_03" type="mesh" mesh="collision_motor_v2306_v3" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0931885473305 0.0929006175488 -0.024031654157" quat="0.923879532511 0 0 0.382683432365" />
+      <geom name="visual_motor_v2306_v3_04" type="mesh" mesh="visual_motor_v2306_v3" contype="0" conaffinity="0" group="2" mass="0" rgba="0.49 0.32 0.65 1" pos="0.0931885473305 -0.0917928166271 -0.0240316541564" quat="0.923879532511 0 0 -0.382683432365" />
+      <geom name="collision_motor_v2306_v3_04" type="mesh" mesh="collision_motor_v2306_v3" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0931885473305 -0.0917928166271 -0.0240316541564" quat="0.923879532511 0 0 -0.382683432365" />
+      <geom name="visual_plate_top_01" type="mesh" mesh="visual_plate_top" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000887847683797 0.000508095942551 0.0348668639613" quat="0.5 0.5 0.5 0.5" />
+      <geom name="collision_plate_top_01" type="mesh" mesh="collision_plate_top" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000887847683797 0.000508095942551 0.0348668639613" quat="0.5 0.5 0.5 0.5" />
+      <geom name="visual_plate_bottom_01" type="mesh" mesh="visual_plate_bottom" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000841830242521 0.000553900460829 -0.0421534324214" quat="0.5 0.5 0.5 0.5" />
+      <geom name="collision_plate_bottom_01" type="mesh" mesh="collision_plate_bottom" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000841830242521 0.000553900460829 -0.0421534324214" quat="0.5 0.5 0.5 0.5" />
+      <geom name="visual_plate_middle_01" type="mesh" mesh="visual_plate_middle" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000887847683796 0.000508095942551 0.00086686396134" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="collision_plate_middle_01" type="mesh" mesh="collision_plate_middle" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000887847683796 0.000508095942551 0.00086686396134" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="visual_landing_damper_01" type="mesh" mesh="visual_landing_damper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.66 0.73 0.3 1" pos="0.0759915135568 0.0680224004771 -0.121267117769" quat="0.705654619419 -0.0008372612471 -0.0008372612471 0.708554977457" />
+      <geom name="collision_landing_damper_01" type="mesh" mesh="collision_landing_damper" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0759915135568 0.0680224004771 -0.121267117769" quat="0.705654619419 -0.0008372612471 -0.0008372612471 0.708554977457" />
+      <geom name="visual_landing_damper_02" type="mesh" mesh="visual_landing_damper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.66 0.73 0.3 1" pos="0.0760641669278 -0.0668338229016 -0.121313754192" quat="0.708174829889 -0.000617260393764 -0.000617260393764 0.706036577162" />
+      <geom name="collision_landing_damper_02" type="mesh" mesh="collision_landing_damper" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0760641669278 -0.0668338229016 -0.121313754192" quat="0.708174829889 -0.000617260393764 -0.000617260393764 0.706036577162" />
+      <geom name="visual_landing_damper_03" type="mesh" mesh="visual_landing_damper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.66 0.73 0.3 1" pos="-0.0590069722694 0.0674686690638 -0.121586814749" quat="0.705654619419 -0.0008372612471 -0.0008372612471 0.708554977457" />
+      <geom name="collision_landing_damper_03" type="mesh" mesh="collision_landing_damper" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0590069722694 0.0674686690638 -0.121586814749" quat="0.705654619419 -0.0008372612471 -0.0008372612471 0.708554977457" />
+      <geom name="visual_landing_damper_04" type="mesh" mesh="visual_landing_damper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.66 0.73 0.3 1" pos="-0.0589350100897 -0.066425590813 -0.121549447098" quat="0.708174829889 -0.000617260393764 -0.000617260393764 0.706036577162" />
+      <geom name="collision_landing_damper_04" type="mesh" mesh="collision_landing_damper" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0589350100897 -0.066425590813 -0.121549447098" quat="0.708174829889 -0.000617260393764 -0.000617260393764 0.706036577162" />
+      <geom name="visual_usb_hub_01" type="mesh" mesh="visual_usb_hub" contype="0" conaffinity="0" group="2" mass="0" rgba="0.16 0.18 0.22 1" pos="0.0106085013909 0.000109456917124 0.0185168639613" quat="0.707106781187 0 0 -0.707106781187" />
+      <geom name="collision_usb_hub_01" type="mesh" mesh="collision_usb_hub" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0106085013909 0.000109456917124 0.0185168639613" quat="0.707106781187 0 0 -0.707106781187" />
+      <geom name="visual_down_camera_01" type="mesh" mesh="visual_down_camera" contype="0" conaffinity="0" group="2" mass="0" rgba="0.16 0.18 0.22 1" pos="0.000841830242522 0.000553900460829 -0.0561534324214" quat="0.5 -0.5 -0.5 0.5" />
+      <geom name="collision_down_camera_01" type="mesh" mesh="collision_down_camera" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000841830242522 0.000553900460829 -0.0561534324214" quat="0.5 -0.5 -0.5 0.5" />
+      <geom name="visual_arm_right_upper_01" type="mesh" mesh="visual_arm_right_upper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.0348903269093 0.0207299213495 -0.00363313603903" quat="0.653281482437 0.653281482437 0.270598050076 0.270598050076" />
+      <geom name="collision_arm_right_upper_01" type="mesh" mesh="collision_arm_right_upper" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0348903269093 0.0207299213495 -0.00363313603903" quat="0.653281482437 0.653281482437 0.270598050076 0.270598050076" />
+      <geom name="visual_arm_right_lower_01" type="mesh" mesh="visual_arm_right_lower" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0210636556495 0.0363320750539 -0.00365343242186" quat="0.653281482438 0.653281482438 -0.270598050073 -0.270598050073" />
+      <geom name="collision_arm_right_lower_01" type="mesh" mesh="collision_arm_right_lower" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0210636556495 0.0363320750539 -0.00365343242186" quat="0.653281482438 0.653281482438 -0.270598050073 -0.270598050073" />
+      <geom name="visual_arm_pad_upper_01" type="mesh" mesh="visual_arm_pad_upper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0309631505861 -0.0295674198827 -0.00365343242136" quat="0.653281482438 0.653281482438 0.270598050073 0.270598050073" />
+      <geom name="visual_arm_pad_upper_02" type="mesh" mesh="visual_arm_pad_upper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0309631505861 0.0306752208044 -0.00365343242186" quat="0.653281482438 0.653281482438 -0.270598050073 -0.270598050073" />
+      <geom name="visual_arm_pad_upper_03" type="mesh" mesh="visual_arm_pad_upper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.0292334726598 0.0306294162862 -0.00363313603903" quat="0.653281482437 0.653281482437 0.270598050076 0.270598050076" />
+      <geom name="visual_arm_pad_upper_04" type="mesh" mesh="visual_arm_pad_upper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.029279490101 -0.0295674198827 -0.0036534324204" quat="0.653281482438 0.653281482438 -0.270598050073 -0.270598050073" />
+      <geom name="visual_arm_pad_lower_01" type="mesh" mesh="visual_arm_pad_lower" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.0342292375693 -0.034517167351 -0.0381534324204" quat="0.653281482438 0.653281482438 -0.270598050073 -0.270598050073" />
+      <geom name="visual_arm_pad_lower_02" type="mesh" mesh="visual_arm_pad_lower" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0359128980544 -0.034517167351 -0.0381534324214" quat="0.653281482438 0.653281482438 0.270598050073 0.270598050073" />
+      <geom name="visual_arm_pad_lower_03" type="mesh" mesh="visual_arm_pad_lower" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.0342062288487 0.0356020660136 -0.038133136039" quat="0.652652246817 0.652652246817 0.27211219143 0.27211219143" />
+      <geom name="visual_arm_pad_lower_04" type="mesh" mesh="visual_arm_pad_lower" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0359128980544 0.0356249682727 -0.0381534324219" quat="0.653281482438 0.653281482438 -0.270598050073 -0.270598050073" />
+      <geom name="visual_arm_left_upper_01" type="mesh" mesh="visual_arm_left_upper" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.0193799951644 -0.0352242741322 -0.0036534324204" quat="0.270598050073 0.270598050073 0.653281482438 0.653281482438" />
+      <geom name="collision_arm_left_upper_01" type="mesh" mesh="collision_arm_left_upper" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0193799951644 -0.0352242741322 -0.0036534324204" quat="0.270598050073 0.270598050073 0.653281482438 0.653281482438" />
+      <geom name="visual_arm_left_lower_01" type="mesh" mesh="visual_arm_left_lower" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0366200048356 -0.0196679249461 -0.00365343242136" quat="-0.270598050073 -0.270598050073 0.653281482438 0.653281482438" />
+      <geom name="collision_arm_left_lower_01" type="mesh" mesh="collision_arm_left_lower" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0366200048356 -0.0196679249461 -0.00365343242136" quat="-0.270598050073 -0.270598050073 0.653281482438 0.653281482438" />
+      <geom name="visual_rk3588_heatsink_01" type="mesh" mesh="visual_rk3588_heatsink" contype="0" conaffinity="0" group="2" mass="0" rgba="0.16 0.18 0.22 1" pos="0.0128978476838 0.00194809594252 0.0482668639613" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="collision_rk3588_heatsink_01" type="mesh" mesh="collision_rk3588_heatsink" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0128978476838 0.00194809594252 0.0482668639613" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="visual_depth_camera_backplate_01" type="mesh" mesh="visual_depth_camera_backplate" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="-0.0248521523162 0.000508095944868 0.0363668639613" quat="0.5 -0.5 -0.5 0.5" />
+      <geom name="collision_depth_camera_backplate_01" type="mesh" mesh="collision_depth_camera_backplate" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0248521523162 0.000508095944868 0.0363668639613" quat="0.5 -0.5 -0.5 0.5" />
+      <geom name="visual_battery_01" type="mesh" mesh="visual_battery" contype="0" conaffinity="0" group="2" mass="0" rgba="0.16 0.18 0.22 1" pos="0.000823231186638 -0.0182037990259 -0.0196534324214" quat="0.707106781187 2.4749183681e-15 0.707106781187 4.94376849918e-15" />
+      <geom name="collision_battery_01" type="mesh" mesh="collision_battery" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000823231186638 -0.0182037990259 -0.0196534324214" quat="0.707106781187 2.4749183681e-15 0.707106781187 4.94376849918e-15" />
+      <geom name="visual_esc_01" type="mesh" mesh="visual_esc" contype="0" conaffinity="0" group="2" mass="0" rgba="0.1 0.32 0.2 1" pos="-0.0141121523162 0.000508095942551 0.00986686396134" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="collision_esc_01" type="mesh" mesh="collision_esc" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0141121523162 0.000508095942551 0.00986686396134" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="visual_landing_skid_150mm_01" type="mesh" mesh="visual_landing_skid_150mm" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0759915135568 0.0680224004771 -0.121267117769" quat="0.700725499762 0.0819398933247 -0.0832641393238 0.70380161336" />
+      <geom name="collision_landing_skid_150mm_01" type="mesh" mesh="collision_landing_skid_150mm" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0759915135568 0.0680224004771 -0.121267117769" quat="0.700725499762 0.0819398933247 -0.0832641393238 0.70380161336" />
+      <geom name="visual_landing_skid_150mm_02" type="mesh" mesh="visual_landing_skid_150mm" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.0760641669278 -0.0668338229016 -0.121313754192" quat="0.707592758554 0.027395006276 -0.0287133895722 0.705505168608" />
+      <geom name="collision_landing_skid_150mm_02" type="mesh" mesh="collision_landing_skid_150mm" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.0760641669278 -0.0668338229016 -0.121313754192" quat="0.707592758554 0.027395006276 -0.0287133895722 0.705505168608" />
+      <geom name="visual_landing_tee_60deg_01" type="mesh" mesh="visual_landing_tee_60deg" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000831355002243 -0.0718024901614 -0.124445092812" quat="0.00174587604074 -9.13377369838e-15 0.499999237979 0.866024083925" />
+      <geom name="collision_landing_tee_60deg_01" type="mesh" mesh="collision_landing_tee_60deg" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000831355002243 -0.0718024901614 -0.124445092812" quat="0.00174587604074 -9.13377369838e-15 0.499999237979 0.866024083925" />
+      <geom name="visual_landing_tee_60deg_02" type="mesh" mesh="visual_landing_tee_60deg" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000827621487833 0.0729102777811 -0.124445100491" quat="0.866022975424 0.499998597985 -7.82370078946e-15 0.00236813242178" />
+      <geom name="collision_landing_tee_60deg_02" type="mesh" mesh="collision_landing_tee_60deg" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000827621487833 0.0729102777811 -0.124445100491" quat="0.866022975424 0.499998597985 -7.82370078946e-15 0.00236813242178" />
+      <geom name="visual_landing_strut_70mm_01" type="mesh" mesh="visual_landing_strut_70mm" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000841830242521 0.0292141544987 -0.0547611275759" quat="0.200726768997 -0.115889654114 0.842442142944 -0.486384198005" />
+      <geom name="collision_landing_strut_70mm_01" type="mesh" mesh="collision_landing_strut_70mm" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000841830242521 0.0292141544987 -0.0547611275759" quat="0.200726768997 -0.115889654114 0.842442142944 -0.486384198005" />
+      <geom name="visual_landing_strut_70mm_02" type="mesh" mesh="visual_landing_strut_70mm" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000841830242522 -0.063106353577 -0.115382905841" quat="0.844593582966 0.487626332481 0.191472399088 0.110546641156" />
+      <geom name="collision_landing_strut_70mm_02" type="mesh" mesh="collision_landing_strut_70mm" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000841830242522 -0.063106353577 -0.115382905841" quat="0.844593582966 0.487626332481 0.191472399088 0.110546641156" />
+      <geom name="visual_landing_pivot_01" type="mesh" mesh="visual_landing_pivot" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000841830242522 0.0265539004608 -0.0421534324214" quat="0.5 -0.5 0.5 -0.5" />
+      <geom name="collision_landing_pivot_01" type="mesh" mesh="collision_landing_pivot" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000841830242522 0.0265539004608 -0.0421534324214" quat="0.5 -0.5 0.5 -0.5" />
+      <geom name="visual_landing_pivot_02" type="mesh" mesh="visual_landing_pivot" contype="0" conaffinity="0" group="2" mass="0" rgba="0.74 0.76 0.8 1" pos="0.000841830242521 -0.0254460995392 -0.0421534324214" quat="0.5 -0.5 -0.5 0.5" />
+      <geom name="collision_landing_pivot_02" type="mesh" mesh="collision_landing_pivot" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="0.000841830242521 -0.0254460995392 -0.0421534324214" quat="0.5 -0.5 -0.5 0.5" />
+      <geom name="visual_flight_controller_01" type="mesh" mesh="visual_flight_controller" contype="0" conaffinity="0" group="2" mass="0" rgba="0.1 0.32 0.2 1" pos="-0.0141121523162 0.000508095942551 0.0178668639613" quat="0.5 0.5 -0.5 -0.5" />
+      <geom name="collision_flight_controller_01" type="mesh" mesh="collision_flight_controller" group="3" mass="0" rgba="0 0 0 0" friction="0.6 0.005 0.0001" pos="-0.0141121523162 0.000508095942551 0.0178668639613" quat="0.5 0.5 -0.5 -0.5" />
+      <site name="motor_1" pos="-0.0914588694047 0.0928548130301 -0.00536135777412" zaxis="0 0 1" size="0.003" group="4" />
+      <site name="motor_2" pos="0.0931885473305 0.0929006175488 -0.00538165415695" zaxis="0 0 1" size="0.003" group="4" />
+      <site name="motor_3" pos="-0.0915048868455 -0.0917928166271 -0.00538165415548" zaxis="0 0 1" size="0.003" group="4" />
+      <site name="motor_4" pos="0.0931885473305 -0.0917928166271 -0.00538165415645" zaxis="0 0 1" size="0.003" group="4" />
+    </body>
+  </worldbody>
+</mujoco>

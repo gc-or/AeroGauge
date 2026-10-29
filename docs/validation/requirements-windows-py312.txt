@@ -1,0 +1,12 @@
+# Exact local test environment, Windows Python 3.12.15; not an Isaac or Python 3.11 lock.
+absl-py==2.5.1
+etils==1.14.0
+fsspec==2026.9.0
+glfw==2.11.0
+mujoco==3.15.0
+numpy==2.5.4
+PyOpenGL==3.1.10
+scipy==1.18.1
+typing-extensions==4.16.0
+websockets==17.3
+zipp==4.1.2

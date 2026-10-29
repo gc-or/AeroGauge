@@ -1,0 +1,26 @@
+{
+  "physics_dt_s": 0.002,
+  "control_dt_s": 0.02,
+  "duration_s": 10.0,
+  "initial_position_m": [0, 0, 1],
+  "initial_position_half_range_m": [0.1, 0.1, 0.05],
+  "initial_tilt_deg": 3.0,
+  "target_position_m": [0, 0, 1],
+  "plant": {
+    "mass_scale": 1.0,
+    "inertia_scale": 1.0,
+    "com_shift_flu_m": [0, 0, 0],
+    "motor_thrust_scale": [1, 1, 1, 1],
+    "motor_time_constant_s": 0.0,
+    "motor_delay_s": 0.0,
+    "kappa_m": 0.016
+  },
+  "disturbance": {
+    "constant_force_world_N": [0, 0, 0],
+    "pulse_interval_s": [3.0, 3.2],
+    "pulse_force_world_N": [0, 0, 0],
+    "wind_world_m_s": [0, 0, 0],
+    "air_density_kg_m3": 1.225,
+    "drag_cd_area_m2": [0, 0, 0]
+  }
+}

@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Asset and reference hashes describe original bytes, including line endings.
+aerogauge/data/** -text
+docs/reference_snapshot/** -text
+*.png binary

@@ -1,0 +1,3 @@
+{
+  "plant": {"motor_time_constant_s": 0.02, "motor_delay_s": 0.004}
+}

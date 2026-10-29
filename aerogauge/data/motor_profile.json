@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "profile": "wrj_sim_v1_ideal_actuator",
+  "status": "user_confirmed_simulation_parameters",
+  "decision_date": "2026-10-13",
+  "approval_evidence": "用户：前面这边的补充文件中内容先作为确定的项吧。",
+  "supersedes": "此前仅登记假设、控制测试前再次确认参数的要求。",
+  "scope": "首版已确认仿真动力学；独立电机模型和 WRJ 悬停刚体施力已实现，四环境物理审计通过。代理/估算不等于实机标定。",
+  "source": "addreadme/README_CONTROL_ADDENDUM_2026-10-13.md",
+  "source_sha256": "9ba98f93d5d714d8bbeca4b805d43155b08c12320d885c25e218f08c6cda5eb4",
+  "asset_vehicle": "assets/imported/wrj_sim_v1/config/vehicle.json",
+  "asset_vehicle_sha256": "dfd28d48119f074ed0f27ce65067b03068045f3a53620b04b8f89fd7828fe322",
+  "mass_inertia_geometry": "read_from_asset_vehicle_without_modification",
+  "frames": {
+    "asset_frame": "S",
+    "control_frame": "FLU",
+    "R_BS": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "nose_in_S": [
+      -1,
+      0,
+      0
+    ],
+    "shared_origin": "center_of_mass"
+  },
+  "motor_order": [
+    "motor_3",
+    "motor_1",
+    "motor_4",
+    "motor_2"
+  ],
+  "motor_locations": [
+    "front_left",
+    "front_right",
+    "rear_left",
+    "rear_right"
+  ],
+  "top_view_spin": [
+    "CW",
+    "CCW",
+    "CCW",
+    "CW"
+  ],
+  "body_yaw_reaction_sign": [
+    1,
+    -1,
+    -1,
+    1
+  ],
+  "thrust_model": {
+    "provenance": "T5147-3 + V2306 V3 1750KV proxy for T5146",
+    "interpolation": "piecewise_linear_in_omega_squared",
+    "omega_unit": "rad/s",
+    "source_nodes_columns": [
+      "rpm",
+      "thrust_N"
+    ],
+    "source_nodes": [
+      [
+        10732.8,
+        1.82599823
+      ],
+      [
+        16597.0,
+        4.625796805
+      ],
+      [
+        20537.6,
+        7.320664225
+      ],
+      [
+        25207.7,
+        11.23057558
+      ],
+      [
+        29715.1,
+        15.473913035
+      ]
+    ],
+    "below_first_node": "linear_in_omega_squared_to_artificial_zero_node",
+    "below_first_node_provenance": "adopted numerical assumption; not measured idle/ESC behavior",
+    "upper_boundary": "clamp_to_last_test_node",
+    "max_thrust_N": 15.473913035,
+    "upper_boundary_provenance": "proxy test boundary; not verified continuous hardware rating",
+    "min_thrust_N": 0.0,
+    "min_rpm": 0.0,
+    "max_rpm": 29715.1,
+    "normalized_actuator_command": "u in [0,1] is a fraction of maximum thrust; not bench throttle or an RL action decision"
+  },
+  "yaw_model": {
+    "formula": "tau_z_i = body_yaw_reaction_sign_i * kappa_m * thrust_N_i",
+    "kappa_m": 0.016,
+    "provenance": "accepted constant simulation approximation, not measured torque"
+  },
+  "response": {
+    "model": "instantaneous",
+    "time_constant_s": 0.0,
+    "delay_s": 0.0,
+    "rotor_acceleration_reaction_included": false,
+    "provenance": "ideal actuator, not measured response"
+  },
+  "gravity_m_s2": 9.81,
+  "gf_to_N": 0.00980665,
+  "runtime_adapter_implemented": true,
+  "task_design_status": "用户确认的独立四路推力修正悬停实验；PX4 期望速度研究主线保持独立。",
+  "motor_model_implemented": true,
+  "motor_model_module": "aerial_rl.wrj_motor.WRJMotorModel",
+  "runtime_adapter_module": "aerial_rl.wrj_hover_env.WRJHoverEnv"
+}
